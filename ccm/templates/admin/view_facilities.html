@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Facilities</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>View Facilities</h1>
+    </header>
+    <main>
+        <ul>
+            {% for facility in facilities %}
+                <li>
+                    <strong>{{ facility.name }}</strong><br>
+                    Address: {{ facility.address }}<br>
+                    Phone Number: {{ facility.phone_number }}<br>
+                    License Number: {{ facility.license_number }}<br>
+
+                    <!-- Add Edit and Delete links -->
+                    <a href="{% url 'ccm:edit_facility' facility.id %}">Edit</a>
+                    <a href="{% url 'ccm:delete_facility' facility.id %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

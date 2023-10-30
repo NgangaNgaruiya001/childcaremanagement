@@ -1,0 +1,16 @@
+<!-- ledger_form.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ledger Entry Form</title>
+</head>
+<body>
+    <h1>{% if form.instance.id %}Edit Ledger Entry{% else %}Add Ledger Entry{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="{% if form.instance.id %}Save Changes{% else %}Add Entry{% endif %}">
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- ledger_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ledger Entries</title>
+</head>
+<body>
+    <h1>Ledger Entries</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Child</th>
+                <th>Tuition Fee</th>
+                <th>Weekly Charge</th>
+                <th>Balance</th>
+                <th>Last Payment Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in ledger_entries %}
+                <tr>
+                    <td>{{ entry.child }}</td>
+                    <td>{{ entry.tuition_fee }}</td>
+                    <td>{{ entry.weekly_charge }}</td>
+                    <td>{{ entry.balance }}</td>
+                    <td>{{ entry.last_payment_date }}</td>
+                    <td>
+                        <a href="{% url 'edit_ledger_entry' entry.id %}">Edit</a>
+                        <a href="{% url 'delete_ledger_entry' entry.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Add links for filtering or searching -->
+</body>
+</html>

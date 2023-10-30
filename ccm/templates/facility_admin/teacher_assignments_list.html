@@ -1,0 +1,23 @@
+<!-- teacher_assignments_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Assignments</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Teacher Assignments</h1>
+    </header>
+    <main>
+        <ul>
+            {% for assignment in teacher_assignments %}
+                <li>{{ assignment.classroom.type }} Classroom: {{ assignment.teacher.first_name }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

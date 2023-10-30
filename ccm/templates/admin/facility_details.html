@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facility Details</title>
+</head>
+<body>
+    <h1>Facility Details</h1>
+    <p>Facility Name: {{ facility.name }}</p>
+    <p>Address: {{ facility.address }}</p>
+    <p>Phone Number: {{ facility.phone_number }}</p>
+    <p>License Number: {{ facility.license_number }}</p>
+    <!-- Add more facility details here as needed -->
+    
+    <!-- Optional: Add links or buttons to navigate to other pages -->
+    <a href="{% url 'ccm:enroll_child' %}">Enroll a Child</a>
+    <a href="{% url 'ccm:staff_management' %}">Staff Management</a>
+    <a href="{% url 'ccm:classroom_management' %}">Classroom Management</a>
+    <a href="{% url 'ccm:daily_attendance' %}">Daily Attendance</a>
+    <a href="{% url 'ccm:ledger' %}">Ledger</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- ledger_confirm_delete.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Deletion</title>
+</head>
+<body>
+    <h1>Confirm Deletion</h1>
+    <p>Are you sure you want to delete the ledger entry for {{ ledger_entry.child }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm Deletion">
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Attendance Record</title>
+</head>
+<body>
+    <h1>Delete Attendance Record</h1>
+    <p>Are you sure you want to delete this attendance record for {{ attendance_record.child.first_name }} {{ attendance_record.child.last_name }} on {{ attendance_record.date }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'attendance_list' %}">Cancel</a>
+</body>
+</html>

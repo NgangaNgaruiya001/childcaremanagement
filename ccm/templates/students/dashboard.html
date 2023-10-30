@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Childcare System Admin Dashboard</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Childcare System Admin Dashboard</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'admin_home' %}">Home</a></li>
+            <li><a href="{% url 'manage_facilities' %}">Manage Facilities</a></li>
+            <li><a href="{% url 'manage_children' %}">Manage Children</a></li>
+            <li><a href="{% url 'manage_staff' %}">Manage Staff</a></li>
+            <li><a href="{% url 'manage_classrooms' %}">Manage Classrooms</a></li>
+            <li><a href="{% url 'manage_ledger' %}">Manage Ledger</a></li>
+            <li><a href="{% url 'manage_attendance' %}">Manage Attendance</a></li>
+            <!-- Add more links for other views as needed -->
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        <!-- Your view content will be rendered here -->
+        {% endblock %}
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

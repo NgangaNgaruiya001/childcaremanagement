@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Parent</title>
+</head>
+<body>
+    <h2>Add Parent</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if error_message %}
+<div class="alert alert-danger">
+    {{ error_message }}
+</div>
+{% endif %}
+
+        <button type="submit">Add Parent</button>
+    </form>
+    <a href="{% url 'ccm:parent_list' %}">Back to Parent List</a>
+</body>
+</html>

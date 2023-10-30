@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Classroom</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Edit Classroom</h1>
+    </header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save Changes</button>
+        </form>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

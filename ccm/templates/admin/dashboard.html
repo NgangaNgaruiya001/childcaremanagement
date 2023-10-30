@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Childcare System Admin Dashboard</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+        }
+
+        .sidenav header {
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .sidenav nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidenav nav ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidenav nav ul li a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+
+        .content {
+            margin-left: 270px; /* Adjust the margin to match the width of your sidebar */
+            padding: 20px;
+        }
+
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <header>
+            <h1>Childcare System Admin Dashboard</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'ccm:admin_dashboard' %}">Home</a></li>
+                <li><a href="{}">Manage Facilities</a></li>
+                <li><a href="{% url 'ccm:enrolled_children_list' %}">Manage Children</a></li>
+                <li><a href="{}">Manage Staff</a></li>
+                <li><a href="{}">Manage Classrooms</a></li>
+                <li><a href="{}">Manage Ledger</a></li>
+                <li><a href="{}">Manage Attendance</a></li>
+                <!-- Add more links for other views as needed -->
+            </ul>
+        </nav>
+   </div>
+
+
+        
+ 
+    <div class="content">
+        {% block content %}
+
+        <header>                            THIS IS THE ADMIN DASHBOARD </header>
+        <!-- Your view content will be rendered here -->
+        {% endblock %}
+    </div>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

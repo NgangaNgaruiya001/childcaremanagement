@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Child Ledger</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Child Ledger</h1>
+    </header>
+    <main>
+        <!-- Display ledger entries for a child -->
+        <h2>Child Ledger for {{ child.first_name }} {{ child.last_name }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Tuition Fee</th>
+                    <th>Weekly Charge</th>
+                    <th>Balance</th>
+                    <th>Last Payment Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in ledger_entries %}
+                    <tr>
+                        <td>{{ entry.date }}</td>
+                        <td>{{ entry.tuition_fee }}</td>
+                        <td>{{ entry.weekly_charge }}</td>
+                        <td>{{ entry.balance }}</td>
+                        <td>{{ entry.last_payment_date }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <!-- Add links to other ledger management options as needed -->
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

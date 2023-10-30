@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly Tuition Charges</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Weekly Tuition Charges</h1>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <th>Child</th>
+                <th>Week Start Date</th>
+                <th>Tuition Fee</th>
+                <th>Actions</th>
+            </tr>
+            {% for charge in weekly_charges %}
+                <tr>
+                    <td>{{ charge.child }}</td>
+                    <td>{{ charge.week_start_date }}</td>
+                    <td>${{ charge.tuition_fee }}</td>
+                    <td>
+                        <a href="{% url 'edit_weekly_tuition_charge' charge.id %}">Edit</a>
+                        <a href="{% url 'delete_weekly_tuition_charge' charge.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

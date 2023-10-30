@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom Management</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Classroom Management</h1>
+    </header>
+    <main>
+        <!-- Display a list of classrooms or provide classroom management options here -->
+        <ul>
+            {% for classroom in classroom_list %}
+                <li>
+                    <a href="{% url 'enroll_child' classroom.id %}">Enroll Child</a> in {{ classroom.type }} Classroom
+                </li>
+            {% endfor %}
+        </ul>
+        <!-- Add links to other classroom management options as needed -->
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

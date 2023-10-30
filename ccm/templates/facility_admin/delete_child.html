@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Child</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Delete Child</h1>
+    </header>
+    <main>
+        <p>Are you sure you want to delete the child with the following details?</p>
+        <ul>
+            <li><strong>First Name:</strong> {{ child.first_name }}</li>
+            <li><strong>Last Name:</strong> {{ child.last_name }}</li>
+            <!-- Display other child information here -->
+        </ul>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+            <a href="{% url 'ccm:enrolled_children_list' %}">Cancel</a>
+        </form>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

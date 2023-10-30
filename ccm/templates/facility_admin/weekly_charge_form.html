@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Weekly Tuition Charge</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Add Weekly Tuition Charge</h1>
+    </header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ tuition_fee }}
+            <input type="submit" value="Add">
+        </form>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

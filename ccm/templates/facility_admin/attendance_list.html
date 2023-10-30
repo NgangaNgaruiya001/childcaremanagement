@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance List</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Attendance List</h1>
+    </header>
+    <main>
+        <!-- Display a table or list of attendance records -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Child Name</th>
+                    <th>Classroom</th>
+                    <th>Sign-In Time</th>
+                    <th>Sign-Out Time</th>
+                    <!-- Add more columns as needed -->
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for attendance in attendance_records %}
+                    <tr>
+                        <td>{{ attendance.date }}</td>
+                        <td>{{ attendance.child }}</td>
+                        <td>{{ attendance.classroom }}</td>
+                        <td>{{ attendance.signed_in }}</td>
+                        <td>{{ attendance.signed_out }}</td>
+                        <!-- Add more columns as needed -->
+                        <td><a href="{% url 'ccm:attendance_edit' attendance.id %}">Edit</a></td>
+                        <td><a href="{% url 'ccm:attendance_delete' attendance.id %}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'ccm:attendance_form' %}">Add New Attendance</a>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- view_child_ledger.html -->
+
+<h2>Child Ledger Information</h2>
+
+{% for child, data in child_ledger_data.items %}
+    <h3>Child: {{ child.name }}</h3>
+
+    <h4>Ledger Entries:</h4>
+    <ul>
+        {% for entry in data.ledger_entries %}
+            <li>Entry Date: {{ entry.entry_date }} - Amount: {{ entry.amount }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add more data display as needed -->
+
+{% endfor %}

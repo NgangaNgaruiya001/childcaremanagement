@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Attendance</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>Daily Attendance</h1>
+    </header>
+    <main>
+        <!-- Display daily attendance options or child attendance records here -->
+        <h2>Child Attendance</h2>
+        <ul>
+            {% for child in children %}
+                <li>
+                    <a href="{% url 'mark_attendance' child.id %}">Mark Attendance</a> for {{ child.first_name }} {{ child.last_name }}
+                </li>
+            {% endfor %}
+        </ul>
+        <!-- Add links to other attendance management options as needed -->
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

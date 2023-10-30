@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Staff</title>
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1>View Staff</h1>
+    </header>
+    <main>
+        <!-- Display a list of staff members or provide staff management options here -->
+        <ul>
+            {% for staff in staff_list %}
+                <li>
+                    {{ staff.first_name }} {{ staff.last_name }}
+                    <a href="{% url 'ccm:edit_staff' staff.id %}">Edit</a>
+                    <a href="{% url 'ccm:delete_staff' staff.id %}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>

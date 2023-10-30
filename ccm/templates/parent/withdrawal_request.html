@@ -1,0 +1,14 @@
+<!-- withdrawal_request.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Withdrawal Request</h2>
+<p>Please provide a reason for the withdrawal:</p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Submit Request">
+</form>
+{% endblock %}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parent List</title>
+</head>
+<body>
+    <h2>Parent List</h2>
+    <ul>
+        {% for parent in parents %}
+            <li>
+                {{ parent.user.username }}
+                <a href="{% url 'ccm:edit_parent' parent.id %}">Edit</a>
+                <a href="{% url 'ccm:delete_parent' parent.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'ccm:add_parent' %}">Add Parent</a>
+</body>
+</html>

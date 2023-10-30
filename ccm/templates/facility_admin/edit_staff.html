@@ -1,0 +1,6 @@
+<!-- HTML form to edit staff -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Staff</button>
+</form>

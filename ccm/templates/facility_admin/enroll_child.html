@@ -1,0 +1,57 @@
+{% extends "admin/dashboard.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Child</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Add your CSS links and scripts here -->
+</head>
+<body>
+    <header>
+        <h1 class="text-center">Enroll Child</h1>
+    </header>
+    <main class="py-4">
+        <div class="container">
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.classroom.id_for_label }}">Classroom:</label>
+                    {{ form.classroom }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+                    {{ form.last_name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.dob.id_for_label }}">Date of Birth:</label>
+                    <input type="date" id="{{ form.dob.id_for_label }}" name="{{ form.dob.name }}" value="{{ form.dob.value }}" placeholder="Date of Birth">
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.allergies.id_for_label }}">Allergies:</label>
+                    {{ form.allergies }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.parents.id_for_label }}">Parents:</label>
+                    {{ form.parents }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.facility.id_for_label }}">Facility:</label>
+                    {{ form.facility }}
+                </div>
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Add footer or other elements as needed -->
+</body>
+</html>
+    {% endblock %}
