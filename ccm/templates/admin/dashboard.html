@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Childcare System Admin Dashboard</title>
+    <title>System Admin Dashboard</title>
     <style>
         /* Add your CSS styles here */
         body {
@@ -52,17 +52,17 @@
 <body>
     <div class="sidenav">
         <header>
-            <h1>Childcare System Admin Dashboard</h1>
+            <h1>System Admin Dashboard</h1>
         </header>
         <nav>
             <ul>
                 <li><a href="{% url 'ccm:admin_dashboard' %}">Home</a></li>
-                <li><a href="{}">Manage Facilities</a></li>
+                <li><a href="{% url 'ccm:view_facilities' %}">Manage Facilities</a></li>
                 <li><a href="{% url 'ccm:enrolled_children_list' %}">Manage Children</a></li>
-                <li><a href="{}">Manage Staff</a></li>
-                <li><a href="{}">Manage Classrooms</a></li>
-                <li><a href="{}">Manage Ledger</a></li>
-                <li><a href="{}">Manage Attendance</a></li>
+            <li><a href="{% url 'ccm:view_staff' %}">Manage Staff</a></li>
+            <li><a href="{% url 'ccm:view_classrooms' %}">Manage Classrooms</a></li>
+            <li><a href="{% url 'ccm:list_ledger_entries' %}">Manage Ledger</a></li>
+            <li><a href="{% url 'ccm:attendance_list' %}">Manage Attendance</a></li>
                 <!-- Add more links for other views as needed -->
             </ul>
         </nav>
